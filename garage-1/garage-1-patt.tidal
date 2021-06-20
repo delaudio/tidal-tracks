@@ -1,0 +1,153 @@
+{-# LANGUAGE OverloadedStrings #-}
+
+import Sound.Tidal.Context
+
+kick =
+  struct
+    ( cat
+        [ "t t [t t] t",
+          "t t t [t t]"
+        ]
+    )
+    $ slice 16 "0" $
+      sound "drums-kit:12"
+        # gain
+          ( cat
+              [ "1 1 [1 0.8] 1",
+                "1 1 1 [1 0.6]"
+              ]
+          )
+        # orbit 0
+hat =
+  swing "16 " $
+    struct
+      ( cat
+          [ "[~ t][~ t][t t t ~][~ ~ t t]",
+            "[~ t t ~][~ ~ t t][t t t ~][~ t]"
+          ]
+      )
+      $ slice 16 "4" $
+        sound "drums-kit:12"
+          # gain
+            ( cat
+                [ "[0.9][0.9][[0.7 0.7] 0.9][0.9!3 0.65]",
+                  "[0.7 0.9][0.9 [0.9 0.6]][0.7 0.65 [0.9]][0.9]"
+                ]
+            )
+          # orbit 1
+clap =
+  struct "[~ t]" $
+    slice 16 "5" $
+      sound "drums-kit:12"
+        # gain 0.8
+        # orbit 2
+ride =
+  struct "t!4" $
+    slice 16 "8" $
+      sound "drums-kit:12"
+        # release n8
+        # gain 0.7
+        # orbit 3
+jackin =
+  swing "16" $
+    struct
+      ( cat
+          [ "[~][~ t ~ t][~ t ~ ~][~]",
+            "[~][~ t ~ t][~ t ~ ~][~ t t t]"
+          ]
+      )
+      $ slice 16 "7" $
+        sound "drums-kit:12"
+          # release n8
+          # gain (cat [0.7, fastcat [0.7, 0.7, 0.7, fastcat [0.7, 0.5, 0.7, 0.5]]])
+          # orbit 4
+crash =
+  slow 8 $
+    struct "t ~!7" $
+      slice 16 "6" $
+        sound "drums-kit:12"
+          # gain 0.8
+          # orbit 5
+mainVox = silence # orbit 6
+loopedVox = silence # orbit 7
+keysA =
+  slow 2 $
+    struct "t t" $
+      slice 8 "2" $
+        sound "pianos:1"
+          # note "gs'minor9 ds'minor9"
+          # gain 0.7
+          # release n1
+          # sustain n2
+          # room 0.6
+          # size 0.6
+          # orbit 8
+keysB =
+  struct
+    ( cat
+        [ "[~ t ~ ~] [~ ~ ~ t] [~ t ~ ~]",
+          "[~ t ~ ~] [~ ~ ~ t] [~ t ~ ~] [~ t t t]"
+        ]
+    )
+    $ slice 8 "2" $
+      sound "pianos:1"
+        # note (cat ["gs'minor9", "ds'minor9"])
+        # gain (cat [0.7, fastcat [0.7, 0.7, 0.7, fastcat [0.7, 0.5, 0.7, 0.5]]])
+        # release n16
+        # sustain n16
+        # room 0.6
+        # size 0.6
+        # orbit 8
+subbyBass =
+  swing "16" $
+    struct
+      ( cat
+          [ "[~ ~ t ~] [~ ~ ~ t] [~ t ~ ~]",
+            "[~ ~ t ~] [~ ~ ~ t] [~ t ~ ~] [~ t t t]"
+          ]
+      )
+      $ slice 4 "1" $
+        sound "basses:0"
+          # note (cat ["gs", "ds"])
+          # gain (cat [1, fastcat [1, 1, 1, fastcat [1, 0.8, 1, 0.8]]])
+          # release n8
+          # sustain n8
+          # orbit 9
+percBass =
+  swing "16" $
+    struct
+      ( cat
+          [ "~!3 [t!4]",
+            "~",
+            "~!3 [t!4]",
+            "~"
+          ]
+      )
+      $ sound "basses:2"
+        # note
+          ( cat
+              [ fastcat ["~", "~", "~", fastcat ["gs5", "b5", "ds6", "gs6"]],
+                "~",
+                "~",
+                fastcat ["~", "~", "~", fastcat ["gs6", "ds6", "b5", "gs5"]]
+              ]
+          )
+        # gain 0.7
+        # release n16
+        # sustain n16
+        # orbit 10
+strings = silence # orbit 11
+ambience = silence # orbit 12
+vinyl = silence # orbit 13
+sweep = silence # orbit 14
+whiteNoise = silence # orbit 15
+snares =
+  swing 16 $
+    slow 8 $
+      struct "[t!16]!7 [~]" $
+        slice 16 "11" $
+          sound "drums-kit:12"
+            # gain "[0.8 0.6]!32"
+            # release n16
+            # sustain n16
+            # orbit 16

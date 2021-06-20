@@ -1,0 +1,47 @@
+setcps (125 / 60 / 4)
+
+hush
+
+panic
+
+p 0 $ stack [kick, hat, clap, jackin, vinyl]
+
+p 0 $ stack [kick, hat, clap, jackin, vinyl, crash, loopedVox]
+
+p 0 $ stack [clap, crash, mainVox, loopedVox, keysA, ambience, vinyl]
+
+p 0 $ stack [clap, crash, mainVox, loopedVox, keysB, ambience, vinyl, sweep]
+
+p 0 $ stack [kick, hat, clap, ride, jackin, crash, mainVox, keysB, subbyBass, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, jackin, crash, mainVox, keysB, subbyBass, percBass, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, jackin, crash, mainVox, loopedVox, keysB, subbyBass, percBass, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, jackin, crash, mainVox, loopedVox, keysB, subbyBass, percBass, vinyl, sweep]
+
+p 0 $ stack [kick, hat, clap, ride, jackin, crash, loopedVox, keysB, subbyBass, percBass, strings, vinyl]
+
+p 0 $ stack [kick, crash, loopedVox, keysA, subbyBass, percBass, ambience, vinyl]
+
+p 0 $ stack [kick, hat, loopedVox, keysA, subbyBass, percBass, ambience, vinyl]
+
+p 0 $ stack [clap, crash, mainVox, loopedVox, keysA, ambience, vinyl]
+
+p 0 $ stack [hat, clap, crash, mainVox, loopedVox, keysB, ambience, vinyl]
+
+p 0 $ stack [hat, clap, crash, mainVox, loopedVox, keysB, ambience, sweep, whiteNoise, snares, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, crash, mainVox, loopedVox, keysB, subbyBass, percBass, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, crash, mainVox, loopedVox, keysB, subbyBass, percBass, sweep, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, crash, mainVox, loopedVox, keysB, subbyBass, percBass, strings, vinyl]
+
+p 0 $ stack [kick, hat, clap, ride, crash, loopedVox, keysB, vinyl]
+
+p 0 $ stack [kick, hat, clap, crash, loopedVox, vinyl]
+
+p 0 $ stack [crash]
+
+hush

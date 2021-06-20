@@ -1,0 +1,21 @@
+setcps (125 / 60 / 4)
+
+hush
+
+panic
+
+p 0 $ stack [kick, clap ]
+
+p 0 $ stack [kick, clap, stabs]
+
+p 0 $ stack [kick, clap, hat, stabs]
+
+p 0 $ stack [kick, clap, hat, jackin, stabs]
+
+p 0 $ stack [stabs]
+
+p 0 $ stack [stabs, snares]
+
+p 0 $ stack [kick, clap, stabs, bassline]
+
+p 0 $ stack [bassline]
